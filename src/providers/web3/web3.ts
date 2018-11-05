@@ -38,7 +38,7 @@ export class Web3Provider implements OnDestroy {
         this.eth = new Eth(provider);
 
         if (!this.balancePuller) {
-            this.updateBalance(this.address.getValue())
+            this.updateBalance(this.address.getValue());
             this.balancePuller = setInterval(() => {
                 this.updateBalance(this.address.getValue())
             }, 5000);
@@ -56,7 +56,7 @@ export class Web3Provider implements OnDestroy {
     }
 
     public static toWei(balance): string {
-        return Number(Utils.toWei(balance, 'ether')).toString();
+        return Utils.toWei(balance, 'ether');
     }
 
 }
