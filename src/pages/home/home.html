@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <p>Address:</p>
+    <p>{{address | async}}</p>
+    <p>Balance</p>
+    <p>{{balance | async}} ETH</p>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Receiver address</ion-label>
+        <ion-input [(ngModel)]="toAddress" placeholder="Address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Amount to send</ion-label>
+        <ion-input [(ngModel)]="amount" placeholder="Amount"></ion-input>
+    </ion-item>
+
+    <button (click)="transferEth()" ion-button full>Send</button>
+
+</ion-content>
